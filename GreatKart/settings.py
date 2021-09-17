@@ -140,3 +140,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Main User model
+AUTH_USER_MODEL = 'accounts.GreatKartUser'  # custom user https://wsvincent.com/django-custom-user-model-tutorial/
