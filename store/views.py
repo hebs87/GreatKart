@@ -24,3 +24,13 @@ def store(request, category_slug=None):
     }
 
     return render(request, 'store/store.html', context)
+
+
+def product_details(request):
+    """ A view to render the product-details.html template """
+
+    context = {
+
+    }
+
+    return render(request, 'store/product-details.html', context)
