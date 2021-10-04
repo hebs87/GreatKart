@@ -25,9 +25,10 @@ def store(request, category_slug=None):
 
 def product_details(request, category_slug, product_slug):
     """ A view to render the product-details.html template """
+    product = get_object_or_404(Product, category__slug=category_slug, slug=product_slug, is_available=True)
 
     context = {
-
+        'product': product,
     }
 
     return render(request, 'store/product-details.html', context)
