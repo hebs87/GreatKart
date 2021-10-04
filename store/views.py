@@ -7,9 +7,6 @@ from categories.models import Category
 # Create your views here.
 def store(request, category_slug=None):
     """ A view to render the products in the store.html template - allow filtering by category """
-    category = None
-    products = None
-
     if category_slug is not None:
         category = get_object_or_404(Category, slug=category_slug)
         products = Product.objects.filter(category=category, is_available=True)
@@ -26,7 +23,7 @@ def store(request, category_slug=None):
     return render(request, 'store/store.html', context)
 
 
-def product_details(request):
+def product_details(request, category_slug, product_slug):
     """ A view to render the product-details.html template """
 
     context = {
